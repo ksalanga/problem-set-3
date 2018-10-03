@@ -1,4 +1,4 @@
-/**
+﻿/**
  * INSTRUCTIONS.
  * 
  * Problem Set 3 will be extensive. You've been warned. Practice
@@ -19,6 +19,8 @@
  * placeholders. You'll need to modify them as you write your code.
  */
 
+import java.util.Scanner;
+
 public class ProblemSet3 {
 	
 	/**
@@ -27,7 +29,43 @@ public class ProblemSet3 {
 	 */
 	
 	public static void main(String[] args) {
-			
+			ProblemSet3 ps3 = new ProblemSet3();
+			System.out.println("1) dateFashion: ");
+			ps3.dateFashion(5, 10);
+			ps3.dateFashion(5, 2);
+			ps3.dateFashion(5,5);
+			System.out.println("2) fizzString: ");
+			ps3.fizzString("fig");
+			ps3.fizzString("dib");
+			ps3.fizzString("fib");
+			System.out.println("3) squirrelPlay: ");
+			ps3.squirrelPlay(70, false);
+			ps3.squirrelPlay(95, false);
+			ps3.squirrelPlay(95, true);
+			System.out.println("4) fizzStringAgain: ");
+			ps3.fizzStringAgain(1);
+			ps3.fizzStringAgain(2);
+			ps3.fizzStringAgain(3);
+			System.out.println("5) makeBricks: ");
+			ps3.makeBricks(3, 1, 8);
+			ps3.makeBricks(3, 1, 9);
+			ps3.makeBricks(3, 2, 10);
+			System.out.println("6) loneSum: ");
+			ps3.loneSum(1, 2, 3);
+			ps3.loneSum(3, 2, 3);
+			ps3.loneSum(3, 3, 3);
+			System.out.println("7) luckySum: ");
+			ps3.luckySum(1, 2, 3);
+			ps3.luckySum(1, 2, 13);
+			ps3.luckySum(1, 13, 3);
+			System.out.println("8) factorialFor: ");
+			ps3.factorialFor(3);
+			ps3.factorialFor(4);
+			ps3.factorialFor(5);
+			System.out.println("9) factorialWhile: ");
+			ps3.factorialWhile(3);
+			ps3.factorialWhile(4);
+			ps3.factorialWhile(5);
 	}
 	
 	/*
@@ -47,7 +85,15 @@ public class ProblemSet3 {
 	 */
 	
 	public void dateFashion(int you, int date) {
-		
+		if (you <= 2 || date <= 2) {
+			System.out.println("NO");
+		}
+		else if (you >= 8 || date >= 8) {
+			System.out.println("YES");
+		}
+		else {
+			System.out.println("MAYBE");
+		}
 	}
 	
 	/*
@@ -62,6 +108,20 @@ public class ProblemSet3 {
 	 */
 	
 	public void fizzString(String str) {
+		char first = str.charAt(0);
+		char last = str.charAt(2);
+		if (first == 'f' && last == 'b') {
+			System.out.println("FIZZBUZZ");
+		} 
+		else if (first == 'f') {
+			System.out.println("FIZZ");
+		}
+		else if (last == 'b'){
+			System.out.println("BUZZ");
+		}
+		else {
+			System.out.println("the string unchanged.");
+		}
 		
 	}
 	
@@ -78,7 +138,22 @@ public class ProblemSet3 {
 	 */
 	
 	public void squirrelPlay(int temp, boolean isSummer) {
-		
+		if (isSummer == true) {
+			if (temp >= 60 && temp <= 100) {
+				System.out.println("YES");
+			}
+			else {
+				System.out.println("NO");
+			}
+		}
+		else {
+			if (temp >= 60 && temp <= 90) {
+				System.out.println("YES");
+			}
+			else {
+				System.out.println("NO");
+			}
+		}
 	}
 	
 	/*
@@ -93,7 +168,15 @@ public class ProblemSet3 {
 	 */
 	
 	public void fizzStringAgain(int n) {
-		
+		if (n%3 == 0 && n%5 ==0) {
+			System.out.println("FIZZBUZZ!");
+		}
+		else if (n%3 == 0) {
+			System.out.println("FIZZ!");
+		}
+		else {
+			System.out.println(n + "!");
+		}
 	}
 	
 	/*
@@ -108,7 +191,12 @@ public class ProblemSet3 {
 	 */
 	
 	public void makeBricks(int small, int big, int goal) {
-		
+		if (small + big*5 >= goal) {
+			System.out.println("YES");
+		} 
+		else {
+			System.out.println("NO");
+		}
 	}
 	
 	/*
@@ -121,7 +209,21 @@ public class ProblemSet3 {
 	 */
 	
 	public void loneSum(int a, int b, int c) {
-		
+		if (a == b && b == c && a ==c) {
+			System.out.println(0);
+		}
+		else if (b == c) {
+			System.out.println(a);
+		}
+		else if (a == c) {
+			System.out.println(b);
+		}
+		else if (a == b) {
+			System.out.println(c);
+		}
+		else {
+			System.out.println(a + b + c);
+		}
 	}
 	
 	/*
@@ -135,7 +237,18 @@ public class ProblemSet3 {
 	 */
 	
 	public void luckySum(int a, int b, int c) {
-		
+		if (a == 13) {
+			System.out.println(0);
+		}
+		else if (b == 13) {
+			System.out.println(a);
+		}
+		else if (c == 13) {
+			System.out.println(a + b);
+		}
+		else {
+			System.out.println(a + b + c);
+		}
 	}
 	
 	/*
@@ -148,7 +261,11 @@ public class ProblemSet3 {
 	 */
 	
 	public void factorialFor(int n) {
-		
+		int factorial = 1;
+		for (int i = 1; i <= n; i++) {
+			factorial *= i;
+		}
+		System.out.println(factorial);
 	}
 	
 	/*
@@ -162,6 +279,13 @@ public class ProblemSet3 {
 	 */
 	
 	public void factorialWhile(int n) {
+		int i = 1;
+		int factorial = 1;
+		while (i <= n) {
+			factorial *= i;
+			i++;
+		}
+		System.out.println(n + "! = " + factorial);
 		
 	}
 	
@@ -175,6 +299,10 @@ public class ProblemSet3 {
 	 */
 	
 	public void isPrime(int n) {
-		
+		for(int i = 2; i <= n; i++) {
+			if (n % i == 0) {
+				System.out.println("NOT PRIME");
+			}	
+		}
+		}
 	}
-}
