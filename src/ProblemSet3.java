@@ -318,5 +318,5 @@ public class ProblemSet3 {
 		else {
 			System.out.println("NOT PRIME");
 		}
-		}
+	}
 }
