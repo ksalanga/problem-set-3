@@ -3576,6 +3576,9 @@ public class ProblemSet3 {
 		else if (n%3 == 0) {
 			System.out.println("FIZZ!");
 		}
+		else if (n%5 ==0) {
+			System.out.println("BUZZ!");
+		}
 		else {
 			System.out.println(n + "!");
 		}
