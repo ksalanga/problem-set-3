@@ -66,6 +66,11 @@ public class ProblemSet3 {
 			ps3.factorialWhile(3);
 			ps3.factorialWhile(4);
 			ps3.factorialWhile(5);
+			System.out.println("10) isPrime: ");
+			ps3.isPrime(11);
+			ps3.isPrime(17);
+			ps3.isPrime(4);
+			
 	}
 	
 	/*
@@ -299,10 +304,19 @@ public class ProblemSet3 {
 	 */
 	
 	public void isPrime(int n) {
-		for(int i = 2; i <= n; i++) {
+		boolean check = false;
+		
+		for(int i = 2; i <= n/2; i++) {
 			if (n % i == 0) {
-				System.out.println("NOT PRIME");
-			}	
+				check = true;
+			} 
+		}
+		
+		if(!check) {
+			System.out.println("PRIME");
+		}
+		else {
+			System.out.println("NOT PRIME");
 		}
 		}
-	}
+}
